@@ -147,6 +147,7 @@ function onIceCandidate(event) {
 }
 
 function onAddStream(event) {
+	console.log(JSON.stringify(streams));
     remoteVideo.srcObject = event.streams[0];
     remoteStream = event.stream;
 }
