@@ -44,6 +44,11 @@ btnGoRoom.onclick = function () {
 // message handlers
 socket.on('created', function (room,SocketId) {
 	console.log("In Create");
+	console.log(SocketId)
+	var video = document.createElement('video');
+	videlem.id = SocketId
+	video.autoplay = true;
+	document.getElementById("consultingRoom").innerText += video;
     navigator.mediaDevices.getUserMedia(streamConstraints).then(function (stream) {
         localStream = stream;
         localVideo.srcObject = stream;
@@ -124,6 +129,15 @@ socket.on('offer', function (event) {
 socket.on('answer', function (event) {
     rtcPeerConnection.setRemoteDescription(new RTCSessionDescription(event));
 })
+
+function reload(){
+    var container = document.getElementById("consultingRoom");
+    var content = container.innerHTML;
+    container.innerHTML= content; 
+    
+   //this line is to watch the result in console , you can remove it later	
+   console.log("Refreshed"); 
+}
 
 function enableMute() { 
   localVideo.muted = !localVideo.muted;
