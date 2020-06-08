@@ -19,7 +19,7 @@ var iceServers = {
         { 'urls': 'stun:stun.l.google.com:19302' }
     ]
 }
-var streamConstraints = { audio: {'echoCancellationType': 'browser'} , video: true };
+var streamConstraints = { audio: {'echoCancellationType': 'system'} , video: true };
 var isCaller;
 
 // Let's do this
