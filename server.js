@@ -29,7 +29,9 @@ io.on('connection', function (socket) {
             socket.join(room);
             socket.emit('joined', room);
         } else {
-            socket.emit('full', room);
+            //socket.emit('full', room);
+            socket.join(room);
+            socket.emit('joined', room);
         }
     });
 
