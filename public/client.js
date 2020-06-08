@@ -20,7 +20,7 @@ var iceServers = {
     ]
 }
 var streamConstraints = { audio: {'echoCancellationType': 'system'} , video: true };
-console.log(json.stringify(streamConstraints));
+console.log(JSON.stringify(streamConstraints));
 var isCaller;
 
 // Let's do this
@@ -51,7 +51,7 @@ socket.on('created', function (room) {
 socket.on('joined', function (room) {
     navigator.mediaDevices.getUserMedia(streamConstraints).then(function (stream) {
         localStream = stream;
-	console.log(json.stringify(stream.getCapabilities()));
+	console.log(JSON.stringify(stream.getCapabilities()));
         localVideo.srcObject = stream;
         socket.emit('ready', roomNumber);
     }).catch(function (err) {
