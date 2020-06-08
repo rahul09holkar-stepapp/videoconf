@@ -5,6 +5,7 @@ var inputRoomNumber = document.getElementById("roomNumber");
 var btnGoRoom = document.getElementById("goRoom");
 var localVideo = document.getElementById("localVideo");
 var remoteVideo = document.getElementById("remoteVideo");
+var remoteVideo_1 = document.getElementById("remoteVideo_1");
 
 console.log("App strated")
 
