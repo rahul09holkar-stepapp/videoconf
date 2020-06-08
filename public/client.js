@@ -98,6 +98,7 @@ socket.on('ready', function () {
 socket.on('offer', function (event) {
     if (!isCaller) {
 	console.log("In caller not");
+	console.log(event);
         rtcPeerConnection = new RTCPeerConnection(iceServers);
         rtcPeerConnection.onicecandidate = onIceCandidate;
         rtcPeerConnection.ontrack = onAddStream;
