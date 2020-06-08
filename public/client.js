@@ -41,6 +41,7 @@ btnGoRoom.onclick = function () {
 
 // message handlers
 socket.on('created', function (room) {
+	console.log("In Create");
     navigator.mediaDevices.getUserMedia(streamConstraints).then(function (stream) {
         localStream = stream;
         localVideo.srcObject = stream;
@@ -51,6 +52,7 @@ socket.on('created', function (room) {
 });
 
 socket.on('joined', function (room) {
+	console.log("In joined");
     navigator.mediaDevices.getUserMedia(streamConstraints).then(function (stream) {
         localStream = stream;
         localVideo.srcObject = stream;
@@ -61,6 +63,7 @@ socket.on('joined', function (room) {
 });
 
 socket.on('candidate', function (event) {
+	console.log("In candidate");
     var candidate = new RTCIceCandidate({
         sdpMLineIndex: event.label,
         candidate: event.candidate
@@ -70,6 +73,7 @@ socket.on('candidate', function (event) {
 
 socket.on('ready', function () {
     if (isCaller) {
+	console.log("In caller");
         rtcPeerConnection = new RTCPeerConnection(iceServers);
         rtcPeerConnection.onicecandidate = onIceCandidate;
         rtcPeerConnection.ontrack = onAddStream;
@@ -92,6 +96,7 @@ socket.on('ready', function () {
 
 socket.on('offer', function (event) {
     if (!isCaller) {
+	console.log("In caller not");
         rtcPeerConnection = new RTCPeerConnection(iceServers);
         rtcPeerConnection.onicecandidate = onIceCandidate;
         rtcPeerConnection.ontrack = onAddStream;
