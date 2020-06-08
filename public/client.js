@@ -33,6 +33,7 @@ btnGoRoom.onclick = function () {
     } else {
         roomNumber = inputRoomNumber.value;
         socket.emit('create or join', roomNumber);
+	console.log(roomNumber)
         divSelectRoom.style = "display: none;";
         divConsultingRoom.style = "display: block;";
     }
