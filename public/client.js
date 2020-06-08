@@ -3,7 +3,7 @@ var divSelectRoom = document.getElementById("selectRoom");
 var divConsultingRoom = document.getElementById("consultingRoom");
 var inputRoomNumber = document.getElementById("roomNumber");
 var btnGoRoom = document.getElementById("goRoom");
-var localVideo = document.getElementById("localVideo");
+var localVideo = document.getElementById("localVideo").volume = 0;
 var remoteVideo = document.getElementById("remoteVideo");
 
 // variables
