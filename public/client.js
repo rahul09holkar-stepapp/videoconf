@@ -2,6 +2,7 @@
 var divSelectRoom = document.getElementById("selectRoom");
 var divConsultingRoom = document.getElementById("consultingRoom");
 var inputRoomNumber = document.getElementById("roomNumber");
+var imputUserName = document.getElementById("username");
 var btnGoRoom = document.getElementById("goRoom");
 var localVideo = document.getElementById("localVideo");
 var remoteVideo = document.getElementById("remoteVideo");
@@ -41,7 +42,7 @@ btnGoRoom.onclick = function () {
 };
 
 // message handlers
-socket.on('created', function (room) {
+socket.on('created', function (room,SocketId) {
 	console.log("In Create");
     navigator.mediaDevices.getUserMedia(streamConstraints).then(function (stream) {
         localStream = stream;
@@ -52,7 +53,7 @@ socket.on('created', function (room) {
     });
 });
 
-socket.on('joined', function (room) {
+socket.on('joined', function (room,SocketId) {
 	console.log("In joined");
     navigator.mediaDevices.getUserMedia(streamConstraints).then(function (stream) {
         localStream = stream;

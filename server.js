@@ -18,20 +18,22 @@ io.on('connection', function (socket) {
         console.log('create or join to room ', room);
         
         var myRoom = io.sockets.adapter.rooms[room] || { length: 0 };
+	console.log(socket.id);
+	var SocketId = socket.id
         var numClients = myRoom.length;
 
         console.log(room, ' has ', numClients, ' clients');
 
         if (numClients == 0) {
             socket.join(room);
-            socket.emit('created', room);
+            socket.emit('created', room,SocketId);
         } else if (numClients == 1) {
             socket.join(room);
-            socket.emit('joined', room);
+            socket.emit('joined', room,SocketId);
         } else {
             //socket.emit('full', room);
             socket.join(room);
-            socket.emit('joined', room);
+            socket.emit('joined', room,SocketId);
         }
     });
 
