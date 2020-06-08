@@ -49,7 +49,7 @@ socket.on('created', function (room,SocketId) {
 	refresh()
         navigator.mediaDevices.getUserMedia(streamConstraints).then(function (stream) {
         localStream = stream;
-        localVideo.srcObject = stream;
+        SocketId.srcObject = stream;
         isCaller = true;
     }).catch(function (err) {
         console.log('An error ocurred when accessing media devices', err);
