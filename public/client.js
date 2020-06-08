@@ -46,7 +46,7 @@ socket.on('created', function (room,SocketId) {
 	console.log("In Create");
 	console.log(SocketId)
 	var video = document.createElement('video');
-	videlem.id = SocketId
+	video.id = SocketId
 	video.autoplay = true;
 	document.getElementById("consultingRoom").innerText += video;
     navigator.mediaDevices.getUserMedia(streamConstraints).then(function (stream) {
