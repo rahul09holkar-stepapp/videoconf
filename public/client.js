@@ -45,7 +45,7 @@ btnGoRoom.onclick = function () {
 socket.on('created', function (room,SocketId) {
 	console.log("In Create");
 	console.log(SocketId)
-	//document.getElementById("consultingRoom").innerHTML += '<video id="'+ SocketId +'" autoplay></video>';
+	document.getElementById("consultingRoom").innerHTML += '<video id="'+ SocketId +'" autoplay></video>';
         navigator.mediaDevices.getUserMedia(streamConstraints).then(function (stream) {
         localStream = stream;
         localVideo.srcObject = stream;
