@@ -115,11 +115,11 @@ socket.on('answer', function (event) {
 })
 
 function enableMute() { 
-  localVideo.muted = true;
+  localVideo.muted = !localVideo.muted;
 } 
 
 function disableMute() { 
-  remoteVideo.muted = false;
+  remoteVideo.muted = !remoteVideo.muted
 } 
 
 
