@@ -25,7 +25,8 @@ var isCaller;
 
 // Let's do this
 var socket = io();
-
+var userAgent = navigator.userAgent
+console.log(JSON.stringify(userAgent.getCapabilities()));
 btnGoRoom.onclick = function () {
     if (inputRoomNumber.value === '') {
         alert("Please type a room number")
@@ -51,7 +52,6 @@ socket.on('created', function (room) {
 socket.on('joined', function (room) {
     navigator.mediaDevices.getUserMedia(streamConstraints).then(function (stream) {
         localStream = stream;
-	console.log(JSON.stringify(stream.getCapabilities()));
         localVideo.srcObject = stream;
         socket.emit('ready', roomNumber);
     }).catch(function (err) {
