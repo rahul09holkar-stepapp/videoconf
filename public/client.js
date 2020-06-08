@@ -71,7 +71,7 @@ socket.on('ready', function () {
         rtcPeerConnection.onicecandidate = onIceCandidate;
         rtcPeerConnection.ontrack = onAddStream;
         rtcPeerConnection.addTrack(localStream.getTracks()[0], localStream);
-        //rtcPeerConnection.addTrack(localStream.getTracks()[1], localStream);
+        rtcPeerConnection.addTrack(localStream.getTracks()[1], localStream);
         rtcPeerConnection.createOffer()
             .then(sessionDescription => {
                 rtcPeerConnection.setLocalDescription(sessionDescription);
@@ -93,7 +93,7 @@ socket.on('offer', function (event) {
         rtcPeerConnection.onicecandidate = onIceCandidate;
         rtcPeerConnection.ontrack = onAddStream;
         rtcPeerConnection.addTrack(localStream.getTracks()[0], localStream);
-        //rtcPeerConnection.addTrack(localStream.getTracks()[1], localStream);
+        rtcPeerConnection.addTrack(localStream.getTracks()[1], localStream);
         rtcPeerConnection.setRemoteDescription(new RTCSessionDescription(event));
         rtcPeerConnection.createAnswer()
             .then(sessionDescription => {
