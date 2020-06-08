@@ -6,6 +6,8 @@ var btnGoRoom = document.getElementById("goRoom");
 var localVideo = document.getElementById("localVideo");
 var remoteVideo = document.getElementById("remoteVideo");
 
+console.log("App strated")
+
 // variables
 var roomNumber;
 var localStream;
@@ -111,6 +113,15 @@ socket.on('offer', function (event) {
 socket.on('answer', function (event) {
     rtcPeerConnection.setRemoteDescription(new RTCSessionDescription(event));
 })
+
+function enableMute() { 
+  localVideo.muted = true;
+} 
+
+function disableMute() { 
+  remoteVideo.muted = false;
+} 
+
 
 // handler functions
 function onIceCandidate(event) {
