@@ -26,7 +26,7 @@ var isCaller;
 // Let's do this
 var socket = io();
 var userAgent = navigator.userAgent
-console.log(JSON.stringify(userAgent.getCapabilities()));
+//console.log(JSON.stringify(userAgent.getCapabilities()));
 btnGoRoom.onclick = function () {
     if (inputRoomNumber.value === '') {
         alert("Please type a room number")
