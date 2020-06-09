@@ -55,7 +55,6 @@ socket.on('created', function (room,SocketId) {
 	//document.body.appendChild(video);
 	//var localVideoS = document.getElementById("aaaaaaaa");
 	//location.reload();
-	console.log(localVideoS);
 	//reload();
         navigator.mediaDevices.getUserMedia(streamConstraints).then(function (stream) {
         localStream = stream;
