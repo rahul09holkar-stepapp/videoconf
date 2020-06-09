@@ -113,6 +113,7 @@ socket.on('ready', function () {
 });
 
 socket.on('offer', function (event, numClients) {
+	console.log(numClients)
     if (!isCaller) {
 	console.log("In caller not");
         rtcPeerConnection = new RTCPeerConnection(iceServers);
