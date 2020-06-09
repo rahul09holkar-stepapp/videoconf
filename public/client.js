@@ -51,17 +51,17 @@ socket.on('created', function (room,SocketId,numClients) {
 	console.log(SocketId)
 	var imputUserName = document.getElementById("username").value;
 	document.getElementById('LocalUser').innerHTML = imputUserName;
-	//var video = document.createElement('video');
-	//video.id = "aaaaaaaa";
+	var video = document.createElement('video');
+	video.id = "aaaaaaaa";
 	//document.getElementById("consultingRoom").innerHTML += '<video id="'+ SocketId +'" poster="http://3.6.46.73/abc.jpg"></video>';
-	//video.poster = "http://3.6.46.73/abc.jpg";
-	//document.body.appendChild(video);
-	//var localVideoS = document.getElementById("aaaaaaaa");
+	video.poster = "http://3.6.46.73/abc.jpg";
+	document.body.appendChild(video);
+	var localVideoS = document.getElementById("aaaaaaaa");
 	//location.reload();
 	//reload();
         navigator.mediaDevices.getUserMedia(streamConstraints).then(function (stream) {
         localStream = stream;
-        localVideo.srcObject = stream;
+        localVideoS.srcObject = stream;
         isCaller = true;
     }).catch(function (err) {
         console.log('An error ocurred when accessing media devices', err);
