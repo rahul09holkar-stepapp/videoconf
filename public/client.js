@@ -3,7 +3,7 @@ console.log("Setting Div");
 //reload();
 // getting dom elements
 var divSelectRoom = document.getElementById("selectRoom");
-var divConsultingRoom = document.getElementById("consultingRoom");
+var divConsultingRoom = document.getElementById("roomSection");
 var inputRoomNumber = document.getElementById("roomNumber");
 var imputUserName = document.getElementById("username");
 var btnGoRoom = document.getElementById("goRoom");
