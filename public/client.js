@@ -41,6 +41,14 @@ btnGoRoom.onclick = function () {
     }
 };
 
+//Create Video Tag HTML for Socket
+//
+socket.on('create_video_tag', function(room,SocketId) {
+	document.getElementById("consultingRoom").innerHTML += '<video id="'+ SocketId +'" poster="http://3.6.46.73/abc.jpg"></video>';
+	reload();
+});
+
+
 // message handlers
 socket.on('created', function (room,SocketId) {
 	console.log("In Create");
