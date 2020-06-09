@@ -44,7 +44,7 @@ btnGoRoom.onclick = function () {
 //Create Video Tag HTML for Socket
 //
 socket.on('create_video_tag', function(room,SocketId) {
-	document.getElementById("consultingRoom").innerHTML += '<video id="'+ SocketId +'" poster="http://3.6.46.73/abc.jpg"></video>';
+	document.getElementById("consultingRoom").innerHTML += '<video id="'+ SocketId +'" poster="/opt/videochat/videoConf/image/abc.jpg"></video>';
 	reload();
 });
 
