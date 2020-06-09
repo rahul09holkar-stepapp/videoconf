@@ -1,3 +1,6 @@
+console.log("Setting Div");
+document.getElementById("consultingRoom").innerHTML += '<video id="11111" autoplay ></video> \n';
+reload();
 // getting dom elements
 var divSelectRoom = document.getElementById("selectRoom");
 var divConsultingRoom = document.getElementById("consultingRoom");
@@ -8,8 +11,6 @@ var localVideo = document.getElementById("localVideo");
 var remoteVideo = document.getElementById("remoteVideo");
 var remoteVideo_1 = document.getElementById("remoteVideo_1");
 
-console.log("Setting Div");
-document.getElementById("consultingRoom").innerHTML += '<video id="11111" autoplay ></video> \n';
 
 console.log("App strated")
 
