@@ -51,6 +51,7 @@ socket.on('created', function (room,SocketId) {
 	document.getElementById("consultingRoom").innerHTML += '<video id="'+ SocketId +'" poster="http://3.6.46.73/abc.jpg"></video>';
 	var localVideoS = document.getElementById(SocketId);
 	location.reload();
+	console.log(localVideoS);
 	//reload();
         navigator.mediaDevices.getUserMedia(streamConstraints).then(function (stream) {
         localStream = stream;
