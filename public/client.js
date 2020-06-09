@@ -9,7 +9,6 @@ var imputUserName = document.getElementById("username");
 var btnGoRoom = document.getElementById("goRoom");
 var localVideo = document.getElementById("localVideo");
 var remoteVideo = document.getElementById("remoteVideo");
-var remoteVideo_1 = document.getElementById("remoteVideo_1");
 
 
 console.log("App strated")
@@ -45,32 +44,20 @@ btnGoRoom.onclick = function () {
     }
 };
 
-//Create Video Tag HTML for Socket
-//
-socket.on('create_video_tag', function(room,SocketId) {
-	//document.getElementById("consultingRoom").innerHTML += '<video id="'+ SocketId +'" poster="/opt/videochat/videoConf/image/abc.jpg"></video> \n';
-	document.getElementById("consultingRoom").innerHTML += '<video id="11111" autoplay ></video> \n';
-	//reload();
-	document.getElementById("consultingRoom").innerHTML = document.getElementById("consultingRoom").innerHTML ;
-});
-
-
 // message handlers
 socket.on('created', function (room,SocketId) {
 	console.log("In Create");
 	console.log(SocketId)
-	//document.getElementById("consultingRoom").innerHTML += '<video id="'+ SocketId +'" poster="http://3.6.46.73/abc.jpg"></video>';
+	document.getElementById("consultingRoom").innerHTML += '<video id="'+ SocketId +'" poster="http://3.6.46.73/abc.jpg"></video>';
+	var localVideoS = document.getElementById(SocketId);
 	//reload();
-	console.log(localStream);
-	console.log(localVideo);
         navigator.mediaDevices.getUserMedia(streamConstraints).then(function (stream) {
         localStream = stream;
-        localVideo.srcObject = stream;
+        localVideoS.srcObject = stream;
         isCaller = true;
     }).catch(function (err) {
         console.log('An error ocurred when accessing media devices', err);
     });
-	console.log(localVideo);
 });
 
 socket.on('joined', function (room,SocketId) {
