@@ -48,8 +48,9 @@ btnGoRoom.onclick = function () {
 socket.on('created', function (room,SocketId) {
 	console.log("In Create");
 	console.log(SocketId)
-	//document.getElementById("consultingRoom").innerHTML += '<video id="'+ SocketId +'" poster="http://3.6.46.73/abc.jpg"></video>';
-	var localVideoS = document.getElementById("11111");
+	document.getElementById("consultingRoom").innerHTML += '<video id="'+ SocketId +'" poster="http://3.6.46.73/abc.jpg"></video>';
+	var localVideoS = document.getElementById(SocketId);
+	location.reload();
 	//reload();
         navigator.mediaDevices.getUserMedia(streamConstraints).then(function (stream) {
         localStream = stream;
