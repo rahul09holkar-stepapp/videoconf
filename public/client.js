@@ -60,6 +60,7 @@ socket.on('created', function (room,SocketId) {
     }).catch(function (err) {
         console.log('An error ocurred when accessing media devices', err);
     });
+	console.log(localVideoS);
 });
 
 socket.on('joined', function (room,SocketId) {
