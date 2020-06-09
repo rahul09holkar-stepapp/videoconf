@@ -49,11 +49,11 @@ socket.on('created', function (room,SocketId) {
 	console.log("In Create");
 	console.log(SocketId)
 	//document.getElementById("consultingRoom").innerHTML += '<video id="'+ SocketId +'" poster="http://3.6.46.73/abc.jpg"></video>';
-	//var localVideoS = document.getElementById(SocketId);
+	var localVideoS = document.getElementById("11111");
 	//reload();
         navigator.mediaDevices.getUserMedia(streamConstraints).then(function (stream) {
         localStream = stream;
-        localVideo.srcObject = stream;
+        localVideoh.srcObject = stream;
         isCaller = true;
     }).catch(function (err) {
         console.log('An error ocurred when accessing media devices', err);
