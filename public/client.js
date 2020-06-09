@@ -48,18 +48,18 @@ btnGoRoom.onclick = function () {
 socket.on('created', function (room,SocketId) {
 	console.log("In Create");
 	console.log(SocketId)
-	var video = document.createElement('video');
-	video.id = "aaaaaaaa";
+	//var video = document.createElement('video');
+	//video.id = "aaaaaaaa";
 	//document.getElementById("consultingRoom").innerHTML += '<video id="'+ SocketId +'" poster="http://3.6.46.73/abc.jpg"></video>';
-	video.poster = "http://3.6.46.73/abc.jpg";
-	document.body.appendChild(video);
-	var localVideoS = document.getElementById("aaaaaaaa");
+	//video.poster = "http://3.6.46.73/abc.jpg";
+	//document.body.appendChild(video);
+	//var localVideoS = document.getElementById("aaaaaaaa");
 	//location.reload();
 	console.log(localVideoS);
 	//reload();
         navigator.mediaDevices.getUserMedia(streamConstraints).then(function (stream) {
         localStream = stream;
-        localVideoS.srcObject = stream;
+        localVideo.srcObject = stream;
         isCaller = true;
     }).catch(function (err) {
         console.log('An error ocurred when accessing media devices', err);
@@ -91,6 +91,7 @@ socket.on('ready', function () {
     if (isCaller) {
 	console.log("In caller");
         rtcPeerConnection = new RTCPeerConnection(iceServers);
+	console.log(JSON.stringify(rtcPeerConnection));
         rtcPeerConnection.onicecandidate = onIceCandidate;
         rtcPeerConnection.ontrack = onAddStream;
         rtcPeerConnection.addTrack(localStream.getTracks()[0], localStream);
