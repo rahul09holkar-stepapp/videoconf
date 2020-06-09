@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+    <title>Video Conference App by Rahul</title>
+</head>
+<body>
+    <h1>Video Conference App by Rahul</h1>
+
+    <div id="selectRoom">
+        <label>Type the room number</label>
+        <input id="username" type="text" />
+        <input id="roomNumber" type="text" />
+        <button id="goRoom">Go</button>
+    </div>
+
+    <div id="consultingRoom" style="display:none">
+	<video id="localVideo" autoplay ></video>
+	<video id="remoteVideo" autoplay ></video>
+	<video id="remoteVideo_1" autoplay ></video>
+    </div>
+    <div>
+	<button onclick="enableMute()" type="button">Mute sound</button>
+        <button onclick="disableMute()" type="button">Mute remote Sound</button>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="client.js"></script>
+</body>
