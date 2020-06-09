@@ -8,6 +8,9 @@ var localVideo = document.getElementById("localVideo");
 var remoteVideo = document.getElementById("remoteVideo");
 var remoteVideo_1 = document.getElementById("remoteVideo_1");
 
+console.log("Setting Div");
+document.getElementById("consultingRoom").innerHTML += '<video id="11111" autoplay ></video> \n';
+
 console.log("App strated")
 
 // variables
@@ -46,7 +49,8 @@ btnGoRoom.onclick = function () {
 socket.on('create_video_tag', function(room,SocketId) {
 	//document.getElementById("consultingRoom").innerHTML += '<video id="'+ SocketId +'" poster="/opt/videochat/videoConf/image/abc.jpg"></video> \n';
 	document.getElementById("consultingRoom").innerHTML += '<video id="11111" autoplay ></video> \n';
-	reload();
+	//reload();
+	document.getElementById("consultingRoom").innerHTML = document.getElementById("consultingRoom").innerHTML ;
 });
 
 

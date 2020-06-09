@@ -21,7 +21,7 @@ io.on('connection', function (socket) {
 	console.log(socket.id);
 	var SocketId = socket.id
         var numClients = myRoom.length;
-	socket.emit('create_video_tag',room,SocketId);
+	//socket.emit('create_video_tag',room,SocketId);
 
         console.log(room, ' has ', numClients, ' clients');
 
