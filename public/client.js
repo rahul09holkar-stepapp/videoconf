@@ -48,8 +48,12 @@ btnGoRoom.onclick = function () {
 socket.on('created', function (room,SocketId) {
 	console.log("In Create");
 	console.log(SocketId)
-	document.getElementById("consultingRoom").innerHTML += '<video id="'+ SocketId +'" poster="http://3.6.46.73/abc.jpg"></video>';
-	var localVideoS = document.getElementById(SocketId);
+	var video = document.createElement('video');
+	video.id = "aaaaaaaa";
+	//document.getElementById("consultingRoom").innerHTML += '<video id="'+ SocketId +'" poster="http://3.6.46.73/abc.jpg"></video>';
+	video.poster = "http://3.6.46.73/abc.jpg";
+	document.body.appendChild(video);
+	var localVideoS = document.getElementById("aaaaaaaa");
 	//location.reload();
 	console.log(localVideoS);
 	//reload();
