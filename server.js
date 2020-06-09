@@ -48,7 +48,7 @@ console.log('a user connected --- 2');
     });
 
     socket.on('offer', function(event){
-        socket.broadcast.to(event.room).emit('offer',event.sdp,numClients);
+        socket.broadcast.to(event.room).emit('offer',event.sdp);
     });
 
     socket.on('answer', function(event){
