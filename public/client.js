@@ -50,7 +50,7 @@ btnGoRoom.onclick = function () {
 socket.on('created', function (room,SocketId,numClients) {
 	console.log("In Create");
 	console.log(SocketId)
-	console.log(numClients);
+	console.log(imputUserName);
 	document.getElementById('LocalUser').innerHTML = imputUserName;
 	//var video = document.createElement('video');
 	//video.id = "aaaaaaaa";
