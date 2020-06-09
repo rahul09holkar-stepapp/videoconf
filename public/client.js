@@ -9,7 +9,6 @@ var imputUserName = document.getElementById("username");
 var btnGoRoom = document.getElementById("goRoom");
 var localVideo = document.getElementById("localVideo");
 var remoteVideo = document.getElementById("remoteVideo");
-var remoteVideo_1 = document.getElementById("remoteVideo_1");
 
 
 console.log("App strated")
@@ -18,7 +17,6 @@ console.log("App strated")
 var roomNumber;
 var localStream;
 var remoteStream;
-var remoteStream_1;
 var rtcPeerConnection;
 var connections = []
 var iceServers = {
@@ -113,16 +111,12 @@ socket.on('ready', function () {
 });
 
 socket.on('offer', function (event, numClients) {
-	console.log(numClients)
+	console.log(numClients);
     if (!isCaller) {
 	console.log("In caller not");
         rtcPeerConnection = new RTCPeerConnection(iceServers);
         rtcPeerConnection.onicecandidate = onIceCandidate;
-	if (numClients > 1) {
-		rtcPeerConnection.ontrack = onAddStream_1;
-	}else {
-        	rtcPeerConnection.ontrack = onAddStream;
-	}
+        rtcPeerConnection.ontrack = onAddStream;
         rtcPeerConnection.addTrack(localStream.getTracks()[0], localStream);
         rtcPeerConnection.addTrack(localStream.getTracks()[1], localStream);
         rtcPeerConnection.setRemoteDescription(new RTCSessionDescription(event));
@@ -182,11 +176,4 @@ function onAddStream(event) {
 	console.log(JSON.stringify(event));
     	remoteVideo.srcObject = event.streams[0];
     	remoteStream = event.stream;
-}
-
-function onAddStream_1(event) {
-        console.log("In Add stream  funci - 2 wala");
-        console.log(JSON.stringify(event));
-        remoteVideo_1.srcObject = event.streams[0];
-        remoteStream_1 = event.stream;
 }
