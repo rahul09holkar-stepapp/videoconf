@@ -1,6 +1,6 @@
 console.log("Setting Div");
-document.getElementById("consultingRoom").innerHTML += '<video id="11111" autoplay ></video> \n';
-reload();
+//document.getElementById("consultingRoom").innerHTML += '<video id="11111" autoplay ></video> \n';
+//reload();
 // getting dom elements
 var divSelectRoom = document.getElementById("selectRoom");
 var divConsultingRoom = document.getElementById("consultingRoom");
