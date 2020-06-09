@@ -28,14 +28,14 @@ console.log('a user connected --- 2');
 
         if (numClients == 0) {
             socket.join(room);
-            socket.emit('created', room,SocketId);
+            socket.emit('created', room,SocketId,numClients);
         } else if (numClients == 1) {
             socket.join(room);
-            socket.emit('joined', room,SocketId);
+            socket.emit('joined', room,SocketId,numClients);
         } else {
             //socket.emit('full', room);
             socket.join(room);
-            socket.emit('joined', room,SocketId);
+            socket.emit('joined', room,SocketId,numClients);
         }
     });
 

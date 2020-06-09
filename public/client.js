@@ -46,9 +46,10 @@ btnGoRoom.onclick = function () {
 };
 
 // message handlers
-socket.on('created', function (room,SocketId) {
+socket.on('created', function (room,SocketId,numClients) {
 	console.log("In Create");
 	console.log(SocketId)
+	console.log(numClients);
 	//var video = document.createElement('video');
 	//video.id = "aaaaaaaa";
 	//document.getElementById("consultingRoom").innerHTML += '<video id="'+ SocketId +'" poster="http://3.6.46.73/abc.jpg"></video>';
@@ -66,8 +67,9 @@ socket.on('created', function (room,SocketId) {
     });
 });
 
-socket.on('joined', function (room,SocketId) {
+socket.on('joined', function (room,SocketId,numClients) {
 	console.log("In joined");
+	console.log(numClients);
     navigator.mediaDevices.getUserMedia(streamConstraints).then(function (stream) {
         localStream = stream;
         localVideo.srcObject = stream;
