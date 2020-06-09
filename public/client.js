@@ -5,7 +5,7 @@ console.log("Setting Div");
 var divSelectRoom = document.getElementById("selectRoom");
 var divConsultingRoom = document.getElementById("roomSection");
 var inputRoomNumber = document.getElementById("roomNumber");
-var imputUserName = document.getElementById("username");
+var imputUserName = document.getElementById("username").value;
 var btnGoRoom = document.getElementById("goRoom");
 var localVideo = document.getElementById("localVideo");
 var remoteVideo = document.getElementById("remoteVideo");
