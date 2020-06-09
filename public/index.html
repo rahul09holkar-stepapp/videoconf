@@ -13,7 +13,7 @@
 </head>
 <body>
 
-  <div class="ui container">
+  <div class="ui container" id="roomSection">
     <h1 class="ui header">StepApp Class Demo</h1>
     <hr>
     <div class="ui two column stackable grid">
@@ -48,7 +48,7 @@
       <!-- Local Camera -->
       <div class="ui six wide column">
         <video id="localVideo" class="ui large image"  autoplay poster="images/image.png"></video>
-        <h4 class="ui center aligned header" style="margin:0;">
+        <h4 class="ui center aligned header" style="margin:0;" id='LocalUser'>
           Local Camera
         </h4>
       </div>
@@ -59,6 +59,9 @@
     <div id="remote-videos" class="ui stackable grid">
       <div class="four wide column">
         <video id="remoteVideo" class="ui large image"  autoplay poster="images/image.png" ></video>
+	<h4 class="ui center aligned header" style="margin:0;" id='RemoteUser'>
+          Remote Camera
+        </h4>
       </div>
       <div class="four wide column">
         <img class="ui centered medium image" src="images/image.png">

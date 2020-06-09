@@ -17,6 +17,7 @@ console.log("App strated")
 var roomNumber;
 var localStream;
 var remoteStream;
+var RemoteStream = []
 var rtcPeerConnection;
 var connections = []
 var iceServers = {
@@ -50,6 +51,7 @@ socket.on('created', function (room,SocketId,numClients) {
 	console.log("In Create");
 	console.log(SocketId)
 	console.log(numClients);
+	document.createElement('LocalUser').innerHTML = imputUserName;
 	//var video = document.createElement('video');
 	//video.id = "aaaaaaaa";
 	//document.getElementById("consultingRoom").innerHTML += '<video id="'+ SocketId +'" poster="http://3.6.46.73/abc.jpg"></video>';
