@@ -5,7 +5,6 @@ console.log("Setting Div");
 var divSelectRoom = document.getElementById("selectRoom");
 var divConsultingRoom = document.getElementById("roomSection");
 var inputRoomNumber = document.getElementById("roomNumber");
-var imputUserName = document.getElementById("username").value;
 var btnGoRoom = document.getElementById("goRoom");
 var localVideo = document.getElementById("localVideo");
 var remoteVideo = document.getElementById("remoteVideo");
@@ -50,7 +49,7 @@ btnGoRoom.onclick = function () {
 socket.on('created', function (room,SocketId,numClients) {
 	console.log("In Create");
 	console.log(SocketId)
-	console.log(imputUserName);
+	var imputUserName = document.getElementById("username").value;
 	document.getElementById('LocalUser').innerHTML = imputUserName;
 	//var video = document.createElement('video');
 	//video.id = "aaaaaaaa";
